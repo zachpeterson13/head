@@ -179,6 +179,7 @@ fn parse_bytes(input: Option<String>) -> Option<isize> {
     // GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
     Some(
         num * match multiplier {
+            "" => 1_isize,
             "b" => 512_isize,
             "kB" => 1000_isize.pow(1),
             "K" => 1024_isize.pow(1),
